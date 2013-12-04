@@ -4,12 +4,19 @@ This is an exercise in optimization. The first commit (`Original`) contains
 a ***very*** badly written website, the improvements I make are tested and
 documented below.
 
-All tests are...:
+**All tests are...**
+
 - ...run on an external server.
+- ...run on the same computer in the same browser (Chrome)
 - ...run at least 3 times.
 - ...run with caching disabled in the browser.
 - ...run in order, one listed change also includes all the previous.
 - ...marked by a release-tag.
+
+There are two users with `username/password`:
+
+- `admin/admin`
+- `user/user`
 
 ## Baseline
 
