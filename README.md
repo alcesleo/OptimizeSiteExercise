@@ -119,3 +119,33 @@ files is actually more expensive than to send them as is. Hopefully this makes
 more difference on a slower machine.
 
 I'll keep this change for now, but I might disable it later.
+
+## Optimization #4: Minify JS
+
+### Theory
+
+The site has almost 20 HTTP-requests as it is, this needs to go **way** down.
+
+### Changes
+
+Using [Grunt](http://gruntjs.com/) to concatenate and minify all JS files into one.
+
+    # install grunt
+    npm install
+
+    # minify the js-files
+    grunt
+
+### Observations
+
+`15 requests  ❘  2.1 MB transferred  ❘  3.46 s (load: 3.46 s, DOMContentLoaded: 2.90 s)`
+`15 requests  ❘  2.1 MB transferred  ❘  3.46 s (load: 3.62 s, DOMContentLoaded: 3.54 s)`
+`15 requests  ❘  2.1 MB transferred  ❘  2.55 s (load: 2.55 s, DOMContentLoaded: 2.18 s)`
+
+Less requests, slightly faster loading.
+
+### Reflections
+
+It can be a bit of a hassle to get these build-scripts up and running, but
+it makes it possible to keep the JS nice and modular without increasing the
+number of requests.
