@@ -25,7 +25,7 @@
     <link href="css/main.css" rel="stylesheet" />
 
     <!-- Bootstrap CSS (for some reason needs to be after custom css) -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 
     <!-- External CSS -->
     <link href="http://vhost3.lnu.se:20080/~1dv449/scrape/css.php?css=grid1" rel="stylesheet">
