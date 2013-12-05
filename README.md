@@ -164,3 +164,11 @@ Using the minified version of Bootstrap from a CDN.
 
 `15 requests  ❘  2.1 MB transferred  ❘  2.78 s (load: 2.97 s, DOMContentLoaded: 2.89 s)`
 `15 requests  ❘  2.1 MB transferred  ❘  3.10 s (load: 3.27 s, DOMContentLoaded: 3.19 s)`
+`15 requests  ❘  2.1 MB transferred  ❘  3.05 s (load: 3.23 s, DOMContentLoaded: 3.15 s)`
+
+No noticable difference.
+
+### Reflection
+
+Didn't help much, or at all. This might be because I'm serving the page from
+Swedish servers to a client in Sweden, the CDN might not be as close.
