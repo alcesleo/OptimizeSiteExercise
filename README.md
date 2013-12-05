@@ -149,3 +149,18 @@ Less requests, slightly faster loading.
 It can be a bit of a hassle to get these build-scripts up and running, but
 it makes it possible to keep the JS nice and modular without increasing the
 number of requests.
+
+## Optimization #5: CDN
+
+### Theory
+
+CDN:s allow for better caching, and you don't need to hosts the files yourself.
+
+### Changes
+
+Using the minified version of Bootstrap from a CDN.
+
+### Observations
+
+`15 requests  ❘  2.1 MB transferred  ❘  2.78 s (load: 2.97 s, DOMContentLoaded: 2.89 s)`
+`15 requests  ❘  2.1 MB transferred  ❘  3.10 s (load: 3.27 s, DOMContentLoaded: 3.19 s)`
