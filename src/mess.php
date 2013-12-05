@@ -72,7 +72,7 @@
                     ?>
                 </div>
                 <div class="col-md-6">
-                    <img src="pics/food.jpg" height="220px" />
+                    <img src="img/pics/food.jpg" height="220px" />
                 </div>
             </div>
             <div style="clear: both;"></div>
