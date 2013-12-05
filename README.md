@@ -91,3 +91,31 @@ I didn't expect the numbers to change this much, but it could just mean that the
 server is under heavier load this time. Even though the numbers went down, the
 overall feel of the page has improved, it feels snappier and _appears_ to load
 quicker. It also makes the code so much cleaner and nicer to work with.
+
+## Optimization #3: gzip
+
+### Theory
+
+Compressed data means less traffic, this should reduce load times.
+
+### Changes
+
+Enabled gzip for HTML, CSS and JS using the `.htaccess`-file.
+
+### Observations
+
+`18 requests  ❘  2.1 MB transferred  ❘  3.16 s (load: 3.27 s, DOMContentLoaded: 3.20 s)`
+`18 requests  ❘  2.1 MB transferred  ❘  4.06 s (load: 4.14 s, DOMContentLoaded: 4.05 s)`
+`18 requests  ❘  2.1 MB transferred  ❘  3.47 s (load: 3.58 s, DOMContentLoaded: 3.50 s)`
+
+Less data is transfered, but the load times seem to be even worse.
+
+### Reflections
+
+The amount of data transfered was decreased, as expected, but it did not yield
+better response times. If anything, it made it worse. Maybe it is because I'm
+on a very good internet connection and the time it takes to zip and unzip the
+files is actually more expensive than to send them as is. Hopefully this makes
+more difference on a slower machine.
+
+I'll keep this change for now, but I might disable it later.
