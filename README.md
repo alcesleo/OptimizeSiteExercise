@@ -172,3 +172,28 @@ No noticable difference.
 
 Didn't help much, or at all. This might be because I'm serving the page from
 Swedish servers to a client in Sweden, the CDN might not be as close.
+
+## Optimization #6: Image
+
+### Theory
+
+The image on the front page is **way** larger than it is displayed as, in the
+dev tools network-tab it looks like it takes a huge amount of the total load
+time, reducing the filesize could mean a huge performance boost.
+
+### Changes
+
+Resized the image to be just as big as it is displayed.
+
+### Observations
+
+`15 requests  ❘  151 KB transferred  ❘  2.85 s (load: 2.97 s, DOMContentLoaded: 2.96 s)`
+`15 requests  ❘  151 KB transferred  ❘  3.09 s (load: 3.21 s, DOMContentLoaded: 3.20 s)`
+`15 requests  ❘  151 KB transferred  ❘  3.43 s (load: 3.54 s, DOMContentLoaded: 3.53 s)`
+
+Absolutely huge difference in size, but not much impact on the loading time.
+
+### Reflections
+
+Even though the size was significantly reduced, sadly, the load times are still
+very poor.
