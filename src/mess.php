@@ -109,12 +109,12 @@
                             <!-- Här populeras meddelandena -->
                         </div>
                     </div>
-
                 </div>
-                <!-- mess_container -->
+            </div> <!-- mess_container -->
 
-            </div>
-            <!-- /container -->
+        </div> <!-- image-row -->
+    </div> <!-- container -->
+
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/longpoll.js"></script>
