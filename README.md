@@ -40,3 +40,25 @@ the head, before any JS.
 
 Impressively big difference. There is one extra request (the new `main.css` file) but
 it still loads significantly faster.
+
+## Optimization #2: JavaScript
+
+Following changes has been made:
+
+- Moved all script tags to the bottom
+- Moved all JS in script tags to a separate file
+- Removed script tags that led to a 404
+- (Closed forgotten div-tags, a couple fewer validation errors...)
+
+**No changes has been made to the JS-code. Location, location, location.**
+
+`18 requests  ❘  2.4 MB transferred  ❘  2.21 s (load: 2.37 s, DOMContentLoaded: 2.29 s)`
+`18 requests  ❘  2.4 MB transferred  ❘  3.43 s (load: 3.55 s, DOMContentLoaded: 3.48 s)`
+`18 requests  ❘  2.4 MB transferred  ❘  3.15 s (load: 3.30 s, DOMContentLoaded: 3.22 s)`
+
+Very surprisingly, the performance seems to have decreased a bit. Although the
+numbers are not expected, the site still **feels** like it's loading faster.
+There is noticably less delay before the site appears fully loaded, and this
+makes the code so much cleaner and nicer to work with, and the numbers might just be
+down because of heavier load on the external server. I'll keep the changes.
+
