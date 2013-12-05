@@ -12,24 +12,29 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.png">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Karla:400,700">
-    <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/screen.css" media="screen" />
-    <link rel="stylesheet" href="css/lightbox.css" media="screen" />
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/longpoll.js"></script>
-
-    <style type="text/css">
-        .message_container {
-            border: 1px solid black;
-            padding: 8px;
-            background-color: #DDD;
-        }
-    </style>
-
-    <script src="js/lightbox.js"></script>
 
     <title>Messy Labbage</title>
+
+    <!-- CSS libs -->
+    <link href="http://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Wellfleet" rel="stylesheet" />
+    <link href="css/screen.css" rel="stylesheet" media="screen" />
+    <link href="css/lightbox.css" rel="stylesheet" media="screen" />
+
+    <!-- Custom CSS -->
+    <link href="css/main.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS (for some reason needs to be after custom css) -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link href="http://vhost3.lnu.se:20080/~1dv449/scrape/css.php?css=grid1" rel="stylesheet">
+    <link href="http://vhost3.lnu.se:20080/~1dv449/scrape/css.php?css=grid2" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/longpoll.js"></script>
+    <script src="js/lightbox.js"></script>
+
 
     <script>
         $(document).ready(
@@ -71,17 +76,11 @@
     </script>
 
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="http://vhost3.lnu.se:20080/~1dv449/scrape/css.php?css=grid1" rel="stylesheet">
-    <link href="http://vhost3.lnu.se:20080/~1dv449/scrape/css.php?css=grid2" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
@@ -251,18 +250,7 @@
             <!-- /container -->
             <script type="text/javascript" src="js/modernizr.custom.js"></script>
             <script type="text/javascript" src="js/ajax_minified.js"></script>
-            <style type="text/css">
-                #mess_p_mess {
-                    width: 100%;
-                    height: 250px;
-                    overflow-y: scroll !important;
-                    border: solid 3px black;
-                    padding: 5px;
-                }
-                #mess_p_headline {
-                    font-family:'Wellfleet', cursive;
-                }
-            </style>
+
 </body>
 
 </html>
