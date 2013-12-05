@@ -117,10 +117,8 @@
 
     <!-- Scripts -->
     <script src="js/jquery.js"></script>
-    <script src="js/longpoll.js"></script>
     <script src="js/lightbox.js"></script>
     <script src="js/modernizr.custom.js"></script>
-    <script src="js/ajax_minified.js"></script>
     <script src="js/main.js"></script>
 </body>
 
