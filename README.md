@@ -205,8 +205,9 @@ very poor.
 
 ### Theory
 
-There is a page called `middle.php` that `check.php` redirects to instead of
-`mess.php`. Why you ask? Just to delay 2 seconds before redirecting to `mess.php`.
+There is a page called `middle.php`, hidden away in the `img/`-folder that
+`check.php` redirects to instead of `mess.php`. Why you ask? Just to delay 2
+seconds before redirecting to `mess.php`.
 
 This assignment is starting to get to me.
 
