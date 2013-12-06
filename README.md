@@ -245,3 +245,27 @@ Combined the two Google Font API requests to one.
 
 Much, much better results than I expected! Apparently the extra API-request was
 more expensive than it seemed.
+
+## Optimization #9: Optimize JS minification
+
+### Theory
+
+I discovered that I accidentally included more JS-libraries than the site is using.
+
+### Changes
+
+Pick out minification-targets manually.
+
+### Observations
+
+`14 requests  ❘  93.9 KB transferred  ❘  3.24 s (load: 3.32 s, DOMContentLoaded: 3.31 s)`
+`14 requests  ❘  93.9 KB transferred  ❘  2.85 s (load: 2.88 s, DOMContentLoaded: 2.87 s)`
+`14 requests  ❘  93.9 KB transferred  ❘  2.91 s (load: 2.94 s, DOMContentLoaded: 2.93 s)`
+
+### Reflections
+
+Over half of the remaining download size is gone! I should have done this the first
+time, but I made put it here to keep everything nice and in chronological order.
+
+Filesize really doesn't affect the speed on this blazing network, but I'm still
+satisfied.
