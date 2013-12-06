@@ -197,3 +197,25 @@ Absolutely huge difference in size, but not much impact on the loading time.
 
 Even though the size was significantly reduced, sadly, the load times are still
 very poor.
+
+## Optimization #7: WTF
+
+### Theory
+
+There is a page called `middle.php` that `check.php` redirects to instead of
+`mess.php`. Why you ask? Just to delay 2 seconds before redirecting to `mess.php`.
+
+This assignment is starting to get to me.
+
+### Changes
+
+Removed the `middle.php` file and redirect directly to `mess.php`
+
+### Observations
+
+Obviously, exactly 2 seconds less delay after logging in.
+
+### Reflections
+
+I'm so sick and tired of this codebase.
+
