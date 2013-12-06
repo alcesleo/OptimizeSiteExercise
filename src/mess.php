@@ -16,8 +16,7 @@
     <title>Messy Labbage</title>
 
     <!-- CSS libs -->
-    <link href="http://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet" />
-    <link href="http://fonts.googleapis.com/css?family=Wellfleet" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Karla:400,700|Wellfleet" rel="stylesheet" />
     <link href="css/screen.css" rel="stylesheet" media="screen" />
     <link href="css/lightbox.css" rel="stylesheet" media="screen" />
 
