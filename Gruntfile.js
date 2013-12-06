@@ -4,7 +4,12 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'src/js/dist/build.min.js': 'src/js/*.js'
+                    'src/js/dist/build.min.js': [
+                        'src/js/jquery-1.10.2.min.js',
+                        'src/js/lightbox.js',
+                        'src/js/modernizr.custom.js',
+                        'src/js/main.js'
+                    ]
                 }
             }
         }
