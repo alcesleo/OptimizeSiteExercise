@@ -223,3 +223,25 @@ Obviously, exactly 2 seconds less delay after logging in.
 
 I'm so sick and tired of this codebase.
 
+
+## Optimization #8: Fonts
+
+### Theory
+
+The Google Font API is able to download multiple fonts in one request by separating
+them with a `|`-sign. Less requests is good.
+
+### Changes
+
+Combined the two Google Font API requests to one.
+
+### Observations
+
+`14 requests  ❘  151 KB transferred  ❘  1.92 s (load: 2.03 s, DOMContentLoaded: 2.01 s)`
+`14 requests  ❘  151 KB transferred  ❘  3.18 s (load: 3.31 s, DOMContentLoaded: 3.30 s)`
+`14 requests  ❘  151 KB transferred  ❘  2.41 s (load: 2.53 s, DOMContentLoaded: 2.52 s)`
+
+### Reflections
+
+Much, much better results than I expected! Apparently the extra API-request was
+more expensive than it seemed.
