@@ -6,9 +6,12 @@ documented below.
 
 **All tests are...**
 
+_(...when nothing else is specified...)_
+
 - ...run on an external server.
 - ...run on the same computer in the same browser (Chrome)
 - ...run at least 3 times.
+- ...run on the `mess.php` page, after a successful login.
 - ...run with caching disabled in the browser.
 - ...run in order, one listed change also includes all the previous.
 - ...marked by a release-tag.
