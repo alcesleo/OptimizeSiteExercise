@@ -43,7 +43,7 @@ function checkUser()
     }
 }
 
-function isUser($username, $password)
+function isAuthorized($username, $password)
 {
     $db = connectToDB();
 
