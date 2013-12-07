@@ -31,14 +31,6 @@ $(document).ready(
             changeProducer(parseInt($(this).data('producer_id'), 10));
             return false;
         });
-
-        // Poll
-        var analytics = document.getElementById('analytics');
-        (function poll(){
-            $.ajax({ url: "", success: function(data){
-                analytics.innerHTML = data;
-            }, dataType: "json", complete: poll, timeout: 1000 });
-        })();
     }
 )
 
