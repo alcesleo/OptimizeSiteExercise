@@ -295,3 +295,22 @@ a slightly less stupid solution - a form that submits to the previously implemen
 (but not used) logout function. I also made that logout function functional.
 
 This is an ugly quickfix, but it plugged the security hole.
+
+## Security #2: SQL Injections
+
+### Security hole
+
+**All** places where SQL is used is open to SQL injections.
+
+### Possible exploit
+
+You can use all functions that use the database to do anything with the database.
+
+### Harm
+
+Obviously we don't want anyone with basic knowledge of SQL to have full control
+of our database.
+
+### Fix
+
+Parameterized all queries.
