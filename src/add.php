@@ -6,6 +6,7 @@ require_once("database.php");
 */
 function addToDB($name, $message, $pid)
 {
+    $message = htmlspecialchars($message);
     $db = connectToDB();
 
     $query = "INSERT INTO messages (message, name, pid) VALUES(:message, :name, :pid)";
