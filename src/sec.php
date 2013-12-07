@@ -43,16 +43,18 @@ function checkUser()
     }
 }
 
-function isUser($u, $p)
+function isUser($username, $password)
 {
     $db = connectToDB();
 
-    $q = "SELECT id FROM users WHERE username = '$u' AND password = '$p'";
+    $q = "SELECT id FROM users WHERE username = :username AND password = :password";
 
     $result;
     $stm;
     try {
         $stm = $db->prepare($q);
+        $stm->bindParam(':username', $username, PDO::PARAM_STR);
+        $stm->bindParam(':password', $password, PDO::PARAM_STR);
         $stm->execute();
         $result = $stm->fetchAll();
     } catch (PDOException $e) {
@@ -61,24 +63,21 @@ function isUser($u, $p)
         return false;
     }
 
-    if ($result) {
-        return true;
-    } else {
-        return false;
-    }
+    return $result;
 
 }
 
-function getUser($user)
+function getUser($username)
 {
     $db = connectToDB();
 
-    $q = "SELECT * FROM users WHERE username = '$user'";
+    $q = "SELECT * FROM users WHERE username = :username";
 
     $result;
     $stm;
     try {
         $stm = $db->prepare($q);
+        $stm->bindParam(':username', $username, PDO::PARAM_STR);
         $stm->execute();
         $result = $stm->fetchAll();
     } catch (PDOException $e) {
