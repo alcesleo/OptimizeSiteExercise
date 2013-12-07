@@ -6,7 +6,7 @@ $(document).ready(
 
         $("#add_btn").bind("click", function() {
 
-            var name_val = $('#name_txt').val();
+            var name_val = $('#name_txt').val(); // FIXME: security hole
             var message_val = $('#message_ta').val();
             var pid = $('#mess_inputs').val();
             // make ajax call to logout
@@ -20,7 +20,8 @@ $(document).ready(
                     pid: pid
                 }
             }).done(function(data) {
-                alert(data);
+                $('#message_ta').val(''); // empty textarea
+                loadMessages(pid); // update messages
             });
 
         });
@@ -78,6 +79,10 @@ function changeProducer(pid) {
         }
     });
 
+    loadMessages(pid);
+}
+
+function loadMessages(pid) {
     // get all the messages for a producer
     $.ajax({
         type: "GET",
@@ -91,13 +96,14 @@ function changeProducer(pid) {
         console.log(messages);
 
         if (messages !== false) {
+            var $messageBox = $("#mess_p_mess");
+            $messageBox.empty();
             messages.forEach(function(message) {
-                $("#mess_p_mess").append("<p class='message_container'>" + message.message + "<br />Skrivet av: " + message.name + "</p>");
+                $messageBox.append("<p class='message_container'>" + message.message + "<br />Skrivet av: " + message.name + "</p>");
             });
         }
     });
 
     // show the div if its unvisible
     $("#mess_container").show("slow");
-
 }
