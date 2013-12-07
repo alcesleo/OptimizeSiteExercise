@@ -1,16 +1,11 @@
 <?php
 
+require_once 'database.php';
+
 // get the specific message
 function getMessage($nr)
 {
-    $db = null;
-
-    try {
-        $db = new PDO("sqlite:db.db");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOEception $e) {
-        die("Del -> " .$e->getMessage());
-    }
+    $db = connectToDB();
 
     $q = "SELECT * FROM messages WHERE serial = '$nr'";
 
@@ -35,14 +30,7 @@ function getMessage($nr)
 
 function getMessageIdForProducer($pid)
 {
-    $db = null;
-
-    try {
-        $db = new PDO("sqlite:db.db");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOEception $e) {
-        die("Del -> " .$e->getMessage());
-    }
+    $db = connectToDB();
 
     $q = "SELECT serial FROM messages WHERE pid = $pid";
 
@@ -67,14 +55,7 @@ function getMessageIdForProducer($pid)
 
 function getProducer($id)
 {
-    $db = null;
-
-    try {
-        $db = new PDO("sqlite:producerDB.sqlite");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOEception $e) {
-        die("Del -> " .$e->getMessage());
-    }
+    $db = connectToDB('producerDB.sqlite');
 
     $q = "SELECT * FROM Producers WHERE producerID = '$id'";
 
@@ -99,14 +80,7 @@ function getProducer($id)
 
 function getProducers()
 {
-    $db = null;
-
-    try {
-        $db = new PDO("sqlite:producerDB.sqlite");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOEception $e) {
-        die("Del -> " .$e->getMessage());
-    }
+    $db = connectToDB('producerDB.sqlite');
 
     $q = "SELECT * FROM Producers";
 
@@ -122,7 +96,7 @@ function getProducers()
         return false;
     }
 
-    if($result) {
+    if ($result) {
         return $result;
     } else {
         return false;

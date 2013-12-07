@@ -1,9 +1,9 @@
 <?php
 
-function connectToDB()
+function connectToDB($databaseName = 'db.db')
 {
     try {
-        $db = new PDO("sqlite:db.db");
+        $db = new PDO("sqlite:$databaseName");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOEception $e) {
         die("Something went wrong -> " .$e->getMessage());
