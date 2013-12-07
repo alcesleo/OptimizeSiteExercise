@@ -1,6 +1,6 @@
 <?php
 
-function connectToDB($databaseName = 'db.db')
+function connectToDB($databaseName = 'db.sqlite')
 {
     try {
         $db = new PDO("sqlite:$databaseName");
