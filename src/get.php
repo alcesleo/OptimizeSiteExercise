@@ -29,6 +29,34 @@ function getMessage($nr)
     }
 }
 
+function getAllMessagesForProducer($pid)
+{
+    $db = connectToDB();
+
+    // The ordering is a dirty hack - since it is an autoincremented field
+    // they should be in chronological order.
+    $q = "SELECT * FROM messages WHERE pid = :pid ORDER BY serial DESC";
+
+    $result;
+    $stm;
+    try {
+        $stm = $db->prepare($q);
+        $stm->bindParam(':pid', $pid, PDO::PARAM_INT);
+        $stm->execute();
+        $result = $stm->fetchAll();
+    } catch (PDOException $e) {
+        echo("Error creating query: " .$e->getMessage());
+
+        return false;
+    }
+
+    if ($result) {
+        return $result;
+    } else {
+        return false;
+    }
+}
+
 function getMessageIdForProducer($pid)
 {
     $db = connectToDB();

@@ -272,7 +272,12 @@ satisfied.
 
 ## More optimizations...
 
+Here are the optimizations that have been made working on later tasks of the assignment,
+the performance is not measured for them, but I thought they should at least be mentioned
+in this section.
+
 - Working on another functionality I changed the `onclick` attributes to pure JS in commit `73f4264`.
+- Getting all messages for a producer in a single request in commit `312dc47`.
 
 ## Security #1: Logout
 

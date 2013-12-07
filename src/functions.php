@@ -21,6 +21,10 @@ if (isset($_GET['function'])) {
             addToDB($name, $message, $pid);
             echo "Det gick fint! Ladda om sidan för att se ditt meddelande!";
             break;
+        case 'getAllMessagesForProducer':
+            $pid = $_GET["pid"];
+            echo(json_encode(getAllMessagesForProducer($pid)));
+            break;
         case 'producers':
             $pid = $_GET["pid"];
             echo(json_encode(getProducer($pid)));

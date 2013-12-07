@@ -78,42 +78,23 @@ function changeProducer(pid) {
         }
     });
 
-    // Get all the messages for the producers through functions.php
+    // get all the messages for a producer
     $.ajax({
         type: "GET",
         url: "functions.php",
         data: {
-            function: "getIdsOfMessages",
+            function: "getAllMessagesForProducer",
             pid: pid
         }
-
     }).done(function(data) {
+        var messages = JSON.parse(data);
+        console.log(messages);
 
-        // all the id:s for the messages for this producer
-        var ids = JSON.parse(data);
-        //console.log(ids);
-
-        // Loop through all the ids and make calls for the messages
-        if (ids !== false) {
-            ids.forEach(function(entry) {
-                // problems with the messages not coming in the right order :/
-                $.ajax({
-                    type: "GET",
-                    url: "functions.php",
-                    data: {
-                        function: "getMessage",
-                        serial: entry.serial
-                    },
-                    timeout: 2000
-                }).done(function(data) {
-                    var j = JSON.parse(data);
-                    //  console.log(j);
-                    $("#mess_p_mess").append("<p class='message_container'>" + j.message + "<br />Skrivet av: " + j.name + "</p>");
-
-                });
+        if (messages !== false) {
+            messages.forEach(function(message) {
+                $("#mess_p_mess").append("<p class='message_container'>" + message.message + "<br />Skrivet av: " + message.name + "</p>");
             });
         }
-
     });
 
     // show the div if its unvisible
