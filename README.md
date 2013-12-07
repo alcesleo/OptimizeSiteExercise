@@ -269,3 +269,29 @@ time, but I made put it here to keep everything nice and in chronological order.
 
 Filesize really doesn't affect the speed on this blazing network, but I'm still
 satisfied.
+
+## Security #1: Logout
+
+### Security hole
+
+The logout button is implemented with a JavaScript `window.location` (seriously).
+You are never actually logged out, just redirected to the login page.
+
+### Possible exploit
+
+After logging out, you can simply enter the URL of the logged in page manually
+and you'll still be authorized. This is just a really stupid button that does
+something completely different from what it says.
+
+### Harm
+
+Of course you want your users to be able to log out, otherwise anyone can sit
+down after the user has "logged out" and post in her name.
+
+### Fix
+
+Removed the JavaScript logout function, since it was stupid. Replaced it with
+a slightly less stupid solution - a form that submits to the previously implemented
+(but not used) logout function. I also made that logout function functional.
+
+This is an ugly quickfix, but it plugged the security hole.
