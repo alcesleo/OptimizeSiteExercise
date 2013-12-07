@@ -22,6 +22,8 @@ There are two users with `username/password`:
 - `admin/admin`
 - `user/user`
 
+The latest version is running [here](http://dev-php.alcesleo.com/sucky-php/)
+
 ## Baseline
 
 These are the results with the original codebase, values are from the `Network`-tag
