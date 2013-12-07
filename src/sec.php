@@ -102,9 +102,6 @@ function getUser($user)
 
 function logout()
 {
-    if (!session_id()) {
-        sec_session_start();
-    }
-    session_end();
+    session_destroy();
     header('Location: index.php');
 }
