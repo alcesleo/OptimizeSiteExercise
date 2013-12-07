@@ -314,3 +314,22 @@ of our database.
 ### Fix
 
 Parameterized all queries.
+
+## Security #3: Name
+
+### Security hole
+
+Any user can put in any name when posting.
+
+### Possible exploit
+
+Anyone can post in another users name.
+
+### Harm
+
+This is just a really stupid way of doing things.
+
+### Fix
+
+Quickfix, for now I just put the username in a hidden-field instead. You can
+still change it if you know how but at least it is not a bleeping textbox.
