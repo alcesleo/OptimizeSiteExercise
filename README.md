@@ -315,6 +315,8 @@ of our database.
 
 Parameterized all queries.
 
+**NOTE**: I forgot some, they are fixed in commit: `5ea70df`.
+
 ## Security #3: Name
 
 ### Security hole
