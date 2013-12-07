@@ -26,10 +26,11 @@ function getMessage($nr)
         return false;
     }
 
-    if ($result)
+    if ($result) {
         return $result[0];
-    else
+    } else {
         return false;
+    }
 }
 
 function getMessageIdForProducer($pid)
@@ -57,10 +58,11 @@ function getMessageIdForProducer($pid)
         return false;
     }
 
-    if($result)
+    if ($result) {
         return $result;
-    else
+    } else {
         return false;
+    }
 }
 
 function getProducer($id)
@@ -88,10 +90,11 @@ function getProducer($id)
         return false;
     }
 
-    if($result)
+    if ($result) {
         return $result[0];
-    else
+    } else {
         return false;
+    }
 }
 
 function getProducers()
@@ -119,8 +122,9 @@ function getProducers()
         return false;
     }
 
-    if($result)
+    if($result) {
         return $result;
-    else
+    } else {
         return false;
+    }
 }
