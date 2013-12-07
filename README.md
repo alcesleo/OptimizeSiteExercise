@@ -352,3 +352,13 @@ to all other users until the script is removed. Not good.
 ### Fix
 
 Encoding all input with `htmlspecialchars`.
+
+## Security...
+
+Is still worthless, the passwords are stored in plaintext, you can still post
+as any user via dev tools, you can probably do some damage due to that the
+SQLite database (and the other PHP-files) are accessable if you know their name
+- this should be fixed in `.htaccess`.
+
+To pass the assignment, only 4 security fixes are needed, and frankly I don't
+want to spend a second more than I have to working with this rubbish code.
