@@ -270,6 +270,10 @@ time, but I made put it here to keep everything nice and in chronological order.
 Filesize really doesn't affect the speed on this blazing network, but I'm still
 satisfied.
 
+## More optimizations...
+
+- Working on another functionality I changed the `onclick` attributes to pure JS in commit `73f4264`.
+
 ## Security #1: Logout
 
 ### Security hole
