@@ -9,24 +9,29 @@ sec_session_start();
 */
 if (isset($_GET['function'])) {
 
-    if ($_GET['function'] == 'logout') {
-        logout();
-    } elseif ($_GET['function'] == 'add') {
+    switch ($_GET['function']) {
+        case 'logout':
+            logout();
+            break;
+        case 'add':
+            $name = $_GET["name"];
+            $message = $_GET["message"];
+            $pid = $_GET["pid"];
 
-        $name = $_GET["name"];
-        $message = $_GET["message"];
-        $pid = $_GET["pid"];
-
-        addToDB($name, $message, $pid);
-        echo "Det gick fint! Ladda om sidan för att se ditt meddelande!";
-    } elseif ($_GET['function'] == 'producers') {
-        $pid = $_GET["pid"];
-        echo(json_encode(getProducer($pid)));
-    } elseif ($_GET['function'] == 'getIdsOfMessages') {
-        $pid = $_GET["pid"];
-        echo(json_encode(getMessageIdForProducer($pid)));
-    } elseif ($_GET['function'] == 'getMessage') {
-        $serial = $_GET["serial"];
-        echo(json_encode(getMessage($serial)));
+            addToDB($name, $message, $pid);
+            echo "Det gick fint! Ladda om sidan för att se ditt meddelande!";
+            break;
+        case 'producers':
+            $pid = $_GET["pid"];
+            echo(json_encode(getProducer($pid)));
+            break;
+        case 'getIdsOfMessages':
+            $pid = $_GET["pid"];
+            echo(json_encode(getMessageIdForProducer($pid)));
+            break;
+        case 'getMessage':
+            $serial = $_GET["serial"];
+            echo(json_encode(getMessage($serial)));
+            break;
     }
 }
