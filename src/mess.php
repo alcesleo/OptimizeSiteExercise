@@ -42,7 +42,10 @@
         <div class="header">
             <ul class="nav nav-pills pull-right">
                 <li>
-                    <button class="btn" id="logout">Logga ut</button>
+                    <form action="functions.php">
+                        <input type="hidden" name="function" value="logout">
+                        <input type="submit" class="btn" value="Logga ut" />
+                    </form>
                 </li>
             </ul>
             <h3 class="text-muted">Messy Labbage</h3>
