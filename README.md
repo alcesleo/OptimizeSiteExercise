@@ -333,3 +333,22 @@ This is just a really stupid way of doing things.
 
 Quickfix, for now I just put the username in a hidden-field instead. You can
 still change it if you know how but at least it is not a bleeping textbox.
+
+## Security #4: XSS
+
+### Security hole
+
+The message box was completely open to insert scripts.
+
+### Possible exploit
+
+Any user could insert code that would be executed on for all other users.
+
+### Harm
+
+A user with malicious intents can do anything that JavaScript can do(which is a lot)
+to all other users until the script is removed. Not good.
+
+### Fix
+
+Encoding all input with `htmlspecialchars`.
