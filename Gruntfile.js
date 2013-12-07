@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                         'src/js/jquery-1.10.2.min.js',
                         'src/js/lightbox.js',
                         'src/js/modernizr.custom.js',
-                        'src/js/main.js'
+                        'src/js/mess.js'
                     ]
                 }
             }
