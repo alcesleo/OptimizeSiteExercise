@@ -14,7 +14,8 @@ _(...when nothing else is specified...)_
 - ...run on the `mess.php` page, after a successful login.
 - ...run with caching disabled in the browser.
 - ...run in order, one listed change also includes all the previous.
-- ...marked by a release-tag.
+
+_Every reported change is marked by a release tag_
 
 There are two users with `username/password`:
 
@@ -384,3 +385,19 @@ Messages now appear directly, without a refresh. I implemented it like this:
 -   Adjusted the JS to use this function instead of making lots of requests.
 -   Broke out the message getting into its own function.
 -   Calling this function after a message is posted.
+
+## Conclusion
+
+There is **a lot** that is still wrong with this application. Amongst many others:
+
+- Passwords are in plaintext.
+- Docblocks are missing everywhere.
+- Mixed return values are used.
+- Standards, oh god the standards.
+- Database design, fields are not in a good order etc...
+- The "non-page" php-files can be accessed, displaying a blank page.
+- Logout should be it's own page instead of having to use a query string...
+- Empty messages can be entered.
+
+The application was a steaming bag of dogshit, and now I've stomped out the fire.
+I don't ever want to do work like this again.
