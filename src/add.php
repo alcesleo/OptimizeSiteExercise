@@ -13,12 +13,16 @@ function addToDB($name, $message, $pid)
     } catch (PDOEception $e) {
         die("Something went wrong -> " .$e->getMessage());
     }
-    $q = "INSERT INTO messages (message, name, pid) VALUES('$message', '$name', '$pid')";
+
+    $query = "INSERT INTO messages (message, name, pid) VALUES(:message, :name, :pid)";
+
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':message', $message, PDO::PARAM_STR);
+    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+    $stmt->bindParam(':pid', $pid, PDO::PARAM_INT);
 
     try {
-        if (!$db->query($q)) {
-            die("Fel vid insert");
-        }
+        $stmt->execute();
     } catch (PDOException $e) {
         die("Something went wrong -> " .$e->getMessage());
     }
