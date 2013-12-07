@@ -66,12 +66,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <?php
-                        /* Produces all the links to the producers */
-                        require_once( "get.php");
-                        $ps=getProducers();
-                        foreach($ps as $p) {
-                            echo( '<a onclick="changeProducer(' .$p[ "producerID"] . ');" href="#mess_anchor">' .$p[ "name"] . '</a><br />');
-                        }
+                    /* Produces all the links to the producers */
+                    require_once( "get.php");
+                    $ps = getProducers();
+                    foreach ($ps as $p) {
+                        echo('<a data-producer_id="'. $p["producerID"] . '" href="#mess_anchor" class="producer">' .$p[ "name"] . '</a><br />');
+                    }
                     ?>
                 </div>
                 <div class="col-md-6">

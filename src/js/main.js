@@ -24,6 +24,13 @@ $(document).ready(
             });
 
         });
+
+        // Change producer
+        $("a.producer").click(function () {
+            console.log('hello')
+            changeProducer(parseInt($(this).data('producer_id'), 10));
+            return false;
+        });
     }
 )
 
