@@ -1,5 +1,7 @@
 <?php
 
+require_once('database.php');
+
 /**
  * Just som simple scripts for session handling
  */
@@ -43,14 +45,8 @@ function checkUser()
 
 function isUser($u, $p)
 {
-    $db = null;
+    $db = connectToDB();
 
-    try {
-        $db = new PDO("sqlite:db.db");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOEception $e) {
-        die("Del -> " .$e->getMessage());
-    }
     $q = "SELECT id FROM users WHERE username = '$u' AND password = '$p'";
 
     $result;
@@ -75,14 +71,8 @@ function isUser($u, $p)
 
 function getUser($user)
 {
-    $db = null;
+    $db = connectToDB();
 
-    try {
-        $db = new PDO("sqlite:db.db");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOEception $e) {
-        die("Del -> " .$e->getMessage());
-    }
     $q = "SELECT * FROM users WHERE username = '$user'";
 
     $result;

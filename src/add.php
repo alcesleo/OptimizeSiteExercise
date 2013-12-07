@@ -1,18 +1,12 @@
 <?php
+require_once("database.php");
 
 /**
 * Called from AJAX to add stuff to DB
 */
 function addToDB($name, $message, $pid)
 {
-    $db = null;
-
-    try {
-        $db = new PDO("sqlite:db.db");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOEception $e) {
-        die("Something went wrong -> " .$e->getMessage());
-    }
+    $db = connectToDB();
 
     $query = "INSERT INTO messages (message, name, pid) VALUES(:message, :name, :pid)";
 
