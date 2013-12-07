@@ -1,12 +1,4 @@
 $(document).ready(
-    function() {
-        $("#logout").bind("click", function() {
-            window.location = "index.php";
-        });
-    }
-)
-
-$(document).ready(
 
     function() {
 
