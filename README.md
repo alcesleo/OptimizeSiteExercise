@@ -373,3 +373,14 @@ SQLite database (and the other PHP-files) are accessable if you know their name
 
 To pass the assignment, only 4 security fixes are needed, and frankly I don't
 want to spend a second more than I have to working with this rubbish code.
+
+## Improvement #1: Ajax
+
+Messages now appear directly, without a refresh. I implemented it like this:
+
+-   PHP function to get all messages in one request, instead of first making a request
+    asking for all the ID:s, then making one request for every single message.
+-   Made it available through `functions.php`
+-   Adjusted the JS to use this function instead of making lots of requests.
+-   Broke out the message getting into its own function.
+-   Calling this function after a message is posted.
