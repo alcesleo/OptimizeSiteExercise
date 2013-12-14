@@ -268,7 +268,7 @@ Pick out minification-targets manually.
 ### Reflections
 
 Over half of the remaining download size is gone! I should have done this the first
-time, but I made put it here to keep everything nice and in chronological order.
+time, but I put it here to keep everything nice and in chronological order.
 
 Filesize really doesn't affect the speed on this blazing network, but I'm still
 satisfied.
